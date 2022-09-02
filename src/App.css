@@ -37,39 +37,3 @@ body {
   color: white;
   font-size: 32px;
 }
-
-.movie-picks {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-  border-top: solid white 2px;
-  border-bottom: solid white 2px;
-}
-
-.movie-pick {
-  margin: 40px;
-  border: solid white 6px;
-  width: 300px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 0px 12px rgb(193, 168, 94);
-  border-radius: 10px;
-}
-
-.movie-add-button {
-  border: solid white 2px;
-  margin: 10px;
-  padding: 5px;
-  font-size: 24px;
-  width: 100px;
-  border-radius: 10px;
-}
-
-.movie-add-button:hover {
-  background-color: rgb(193, 168, 94);
-  color: #282c34;
-  cursor: pointer;
-}

@@ -1,0 +1,9 @@
+.movie-picks {
+   display: flex;
+   justify-content: center;
+   border-top: solid white 2px;
+   border-bottom: solid white 2px;
+   margin-left: 30px;
+   margin-right: 30px;
+   padding-bottom: 30px;
+ }

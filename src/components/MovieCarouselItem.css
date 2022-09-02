@@ -1,0 +1,45 @@
+.movie-pick {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 40px;
+   margin-left: 40px;
+   margin-right: 40px;
+   transition: 220ms all;
+ }
+ 
+ .movie-poster {
+   overflow-x: auto;
+   width: 300px;
+   height: 500px;
+   box-shadow: 0px 0px 10px rgb(193, 168, 94);
+   border-radius: 10px;
+   border: solid white 1px;
+ }
+ 
+ .movie-pick:hover {
+   transform: scale(1.1);
+ }
+ 
+ .movie-description {
+   margin-top: 10px;
+   font-size: 16px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .movie-add-button {
+   padding: 5px;
+   font-size: 24px;
+   width: 100%;
+   border-radius: 10px;
+ }
+ 
+ .movie-add-button:hover {
+   background-color: rgb(193, 168, 94);
+   color: #282c34;
+   cursor: pointer;
+ }

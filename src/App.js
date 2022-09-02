@@ -1,67 +1,42 @@
+import { useEffect, useState } from 'react';
 import './App.css';
+import MovieCarousel from './components/MovieCarousel';
+import keys from './keys.json'
+
+// ToDo:
+// 1. Add TMDB attribution
+// 2. Add TMDB call
 
 function App() {
-  function handleAddClick() {
-    console.log('add');
+  const [gog, setGog] = useState(null);
+  const [movieList, setMovieList] = useState([]);
+
+  function handleAddClick(Poster, Title, Year, Director) {
+    setMovieList([...movieList, { Poster, Title, Year, Director }]);
   }
 
-  const movieData = [
-    {
-      title: 'The Shawshank Redemption',
-      year: '1994',
-      director: 'Frank Darabont',
-    },
-    {
-      title: 'The Godfather',
-      year: '1972',
-      director: 'Francis Ford Coppola',
-    },
-    {
-      title: 'The Godfather: Part II',
-      year: '1974',
-      director: 'Francis Ford Coppola',
-    },
-    {
-      title: 'The Dark Knight',
-      year: '2008',
-      director: 'Christopher Nolan',
-    },
-    {
-      title: "Schindler's List",
-      year: '1993',
-      director: 'Steven Spielberg',
-    },
-    {
-      title: 'Pulp Fiction',
-      year: '1994',
-      director: 'Quentin Tarantino',
-    },
-    {
-      title: 'The Lord of the Rings: The Return of the King',
-      year: '2003',
-      director: 'Peter Jackson',
-    },
-  ];
+  useEffect(() => {
+    console.log(movieList, "movieList");
+  }, [movieList]);
+
+  useEffect(() => {
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${keys.OMDBKEY}`)
+    .then(res => res.json())
+    .then(result => {
+      setGog([result]);
+    })
+    .catch(err => console.log(err));
+  } , []);
+
   return (
     <div className="App">
       <div className="nav">
         <div>MoviePickr</div>
       </div>
       <div className="main">
-        <div className="movie-picks">
-          {movieData.map(movie => {
-            return (
-              <div className="movie-pick">
-                <div className="movie-title">{movie.title}</div>
-                <div className="movie-year">{movie.year}</div>
-                <div className="movie-director">{movie.director}</div>
-                <div className="movie-add-button" onClick={handleAddClick}>Add</div>
-              </div>
-            )
-          })}
-        </div>
+        {gog ? <MovieCarousel movies={gog} handleAddClick={handleAddClick} /> : null}
         <div className="movie-recommendations">
-          Your Recommendations
+          {movieList && movieList[0] ? <MovieCarousel movies={movieList} handleAddClick={handleAddClick} /> : null}
         </div>
       </div>
     </div>
