@@ -49,10 +49,11 @@ function MovieCarousel(props) {
         <MovieCarouselItem
           key={index}
           title={props.movies[index].Title}
-          year={props.movies[index].Released}
+          released={props.movies[index].Released}
           director={props.movies[index].Director}
           poster={props.movies[index].Poster}
           handleAddClick={props.handleAddClick}
+          displayAdd={props.displayAdd}
         />
       )
       })}
@@ -63,6 +64,7 @@ function MovieCarousel(props) {
 MovieCarousel.propTypes = {
    movies: PropTypes.array,
    handleAddClick: PropTypes.func,
+   displayAdd: PropTypes.bool
 }
 
 export default MovieCarousel

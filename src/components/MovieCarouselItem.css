@@ -3,23 +3,25 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   margin-top: 40px;
+   margin-top: 25px;
    margin-left: 40px;
    margin-right: 40px;
    transition: 220ms all;
  }
  
  .movie-poster {
-   overflow-x: auto;
-   width: 300px;
-   height: 500px;
+   width: 180px;
+   height: 300px;
    box-shadow: 0px 0px 10px rgb(193, 168, 94);
    border-radius: 10px;
    border: solid white 1px;
+   background-size: contain;
  }
  
  .movie-pick:hover {
    transform: scale(1.1);
+   border: solid rgb(193, 168, 94) 4px;
+   border-radius: 10px;
  }
  
  .movie-description {
