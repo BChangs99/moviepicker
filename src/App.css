@@ -6,7 +6,7 @@ html {
   height: 100%;
   margin: 0;
   padding: 0%;
-  background-color: #392237;
+  background-color: #282c34;
 }
 
 body {
@@ -21,14 +21,17 @@ body {
   text-align: center;
   display: block;
   background-color: #282c34;
-  border-width: 50px;
-  border-style: solid;
-  border-image: 
-    linear-gradient(
-      to left, 
-      #282c34, 
+  border-left: solid rgb(193, 168, 94) 4px;
+  border-right: solid rgb(193, 168, 94) 4px;
+  margin-top: 25px;
+  /* border-width: 50px;
+  border-style: solid; */
+  /* ToDo: Figure out how to use border-image to make a gradient instead of using divs surrounding App */
+  /* border-image: 
+    radial-gradient(
+      #282c34,
       #392237
-    ) 1 100%;
+    ) 1 100%; */
 }
 
 .nav {

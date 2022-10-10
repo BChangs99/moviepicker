@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './MovieCarouselItem.css'
+import { Link } from 'react-router-dom'
 
 function MovieCarouselItem(props) {
   return (
@@ -13,11 +14,12 @@ function MovieCarouselItem(props) {
             +
          </div> : null
       }
-      <div 
+      <Link 
+      // Change the link to the movie page
+         to={`/movie/1`}
          className="movie-poster" 
          style={{backgroundImage: props.poster ? `url("${props.poster})` : ""}}
-         // onClick={direct to movie page}     
-      ></div>
+      ></Link>
       <div className='movie-description'>
          <div className="movie-title">{props ? props.title : ""}</div>
          <div className="movie-year">{props ? props.released : ""}</div>

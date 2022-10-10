@@ -6,6 +6,8 @@ import keys from './keys.json'
 // ToDo:
 // 1. Add TMDB attribution
 // 2. Add TMDB call for list of movies
+// 3. Fix overflow issue with movie posters on bottom row
+// 4. Add proper link routing for movies (instead of just movie/1 for GotG)
 
 function App() {
   const [gog, setGog] = useState(null);
